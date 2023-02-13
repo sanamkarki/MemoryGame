@@ -6,20 +6,33 @@
                 <section class="text-panel">
                     <div class="slds-grid slds-gutters infoRow">
                         <div class="slds-col">
-                            <span>1Move(s)</span>
+                            1Move(s)
                         </div>
                         <div class="slds-col">
                             <span>20 Seconds </span>
                         </div>
                         <div class="slds-col">
                             <span><i class="fa fa-repeat refreshIcon" aria-hidden="true"></i></span>
-
                         </div>
                     </div>
                 </section>
+
                 <!-- working with text panel -->
                 <section class="game-panel">
-                    Game Panel
+                    <div class="gamePanelFormat">
+                        <template for:each={iconCollection} for:item="eachIcon">
+                            <!-- <div key={eachIcon.id}> {eachIcon.id}</div>  {eachIcon.type}-->
+                            <div key={eachIcon.id} class="slds-grid slds-gutters">
+                                <div class="slds-col ">
+                                    <span class="eachIconUnit">
+                                        <!-- <template lwc:if={disabledclick}> </template>-->
+                                        <button disabled={disabledclick}>
+                                            <i class={eachIcon.icon} id={eachIcon.id} aria-hidden="true"
+                                                onclick={iconClick}></i></button> </span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
                 </section>
             </div>
         </lightning-card>
