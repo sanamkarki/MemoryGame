@@ -6,13 +6,15 @@
                 <section class="text-panel">
                     <div class="slds-grid slds-gutters infoRow">
                         <div class="slds-col">
-                            1Move(s)
+                            Moves Left: {remainingClicks}
                         </div>
                         <div class="slds-col">
                             <span>20 Seconds </span>
                         </div>
                         <div class="slds-col">
-                            <span><i class="fa fa-repeat refreshIcon" aria-hidden="true"></i></span>
+
+                            <span><i class="fa fa-repeat refreshIcon" aria-hidden="true"
+                                    onclick={refreshClick}></i></span>
                         </div>
                     </div>
                 </section>
@@ -22,13 +24,14 @@
                     <div class="gamePanelFormat">
                         <template for:each={iconCollection} for:item="eachIcon">
                             <!-- <div key={eachIcon.id}> {eachIcon.id}</div>  {eachIcon.type}-->
-                            <div key={eachIcon.id} class="slds-grid slds-gutters">
-                                <div class="slds-col ">
+                            <div key={eachIcon.id} class="slds-grid slds-gutters gameContainer">
+                                <div class="slds-col iconDivContainer" onclick={iconClick}>
                                     <span class="eachIconUnit">
                                         <!-- <template lwc:if={disabledclick}> </template>-->
-                                        <button disabled={disabledclick}>
-                                            <i class={eachIcon.icon} id={eachIcon.id} aria-hidden="true"
-                                                onclick={iconClick}></i></button> </span>
+                                        <!-- <button disabled={disabledclick} class="buttonClass"> -->
+                                        <i class={eachIcon.icon} id={eachIcon.id} aria-hidden="true"></i>
+                                        <!-- </button> -->
+                                    </span>
                                 </div>
                             </div>
                         </template>
